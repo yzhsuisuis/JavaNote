@@ -17,9 +17,9 @@ git add .
 可选项:
 
 ```bash
-- git add -A  提交所有变化
-- git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
-- git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
+git add -A  提交所有变化
+git add -u  提交被修改(modified)和被删除(deleted)文件，不包括新文件(new)
+git add .  提交新文件(new)和被修改(modified)文件，不包括被删除(deleted)文件
 ```
 
 3.告诉git把文件提交到远程仓库
@@ -48,10 +48,22 @@ git push -u origin master
 
 ## **2 将本地代码推到远程仓库的步骤如下（除了第一次）：**
 
-可以直接执行（如果没有新文件）：
+> 可以直接执行（如果没有新文件）：
 
 ```bash
 git commit -am '说明'   
 git push
+```
+
+>  如果有新文件产生(见上面)
+
+```bash
+git add -A
+
+git commit -m "first commit"
+
+git pull --rebase origin master
+
+git push -u origin maste
 ```
 
