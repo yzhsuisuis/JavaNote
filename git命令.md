@@ -67,3 +67,13 @@ git pull --rebase origin master
 git push -u origin maste
 ```
 
+# 3.设置用户签名
+
+首次安装git需要设置一下命令,保证能区分你的身份
+
+```bash
+git config --global user.name 用户名
+git config --global user.email 邮箱
+```
+
+在C:/用户/yangz/.gitconfig文件中能查看设置的用户名和邮箱
