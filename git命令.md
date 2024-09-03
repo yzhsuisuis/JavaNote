@@ -23,6 +23,14 @@ git reset --hard 版本号
 
 
 
+
+
+```bash
+研究一下这个分支怎么用
+```
+
+![image-20240903125027779](git%E5%91%BD%E4%BB%A4.assets/image-20240903125027779.png)
+
 # 1. 将本地代码推到远程仓库的命令
 
 1.初始化,把这个目录变成git可以管理的仓库
@@ -103,4 +111,3 @@ git config --global user.email 邮箱
 
 在C:/用户/yangz/.gitconfig文件中能查看设置的用户名和邮箱
 
-# 
