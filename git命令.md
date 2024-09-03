@@ -23,13 +23,13 @@ git reset --hard 版本号
 
 
 
-# 2. 叫你嗲大吉哦及
+# 
 
 ```bash
 
 ```
 
-![image-20240903155642012](git%E5%91%BD%E4%BB%A4.assets/image-20240903155642012.png)
+
 
 # 1. 将本地代码推到远程仓库的命令
 
@@ -110,4 +110,52 @@ git config --global user.email 邮箱
 ```
 
 在C:/用户/yangz/.gitconfig文件中能查看设置的用户名和邮箱
+
+# 4. 遇到的报错
+
+1. 在GIT BASH Here中,修改完代码 ,然后 git commit -am "1234"  , git push 后报错
+
+> （学习过程所遇问题）Git: fatal: unable to access 'https://github.com/zhangruiNo1/HUASUAN.git/': OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0
+
+解决方法 :
+
+```BASH
+ 终端中输入
+
+//取消http代理
+
+git config --global --unset http.proxy
+
+//取消https代理
+
+git config --global --unset https.proxy
+
+然后通过设置中查看代理的端口
+
+终端中再次输入
+
+git config --global http.proxy http://127.0.0.1:代理端口
+```
+
+注意代理端口去哪里找? ,设置--> 网络与 Intnet --> 编辑  
+
+
+
+2. 在IDEA中commit完代码后,点击push报错
+
+   > push to origin/master was rejected
+
+解决方法:
+
+```bash
+1.切换到自己项目所在的目录,右键选在GIT BASH Here
+
+2. 在窗口依次输入命令
+git pull
+
+git pull origin master
+
+git pull origin master --allow-unrelated-histories
+
+```
 
