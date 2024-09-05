@@ -79,7 +79,7 @@ git pull --rebase origin master
 git push -u origin master
 ```
 
-## **2 将本地代码推到远程仓库的步骤如下（除了第一次）：**
+# 2 将本地代码推到远程仓库的步骤如下（除了第一次）：
 
 > 可以直接执行（如果没有新文件）：
 
@@ -159,13 +159,35 @@ git pull origin master --allow-unrelated-histories
 
 ```
 
-3. 每次在idea中push到远程仓库，都需要重新输入token
+
+
+
+
+
+
+1. 每次在idea中push到远程仓库，都需要重新输入token
 
    解决方法：
 
    ```bash
    # 在输入token成功登陆后，在git Bash Here中输入以下命令,两年之内都记得
    git config --global credential.helper 'cache --timeout=63072000'
+   ```
+
+   
+
+
+
+
+
+3. ![image-20240905172448875](git%E5%91%BD%E4%BB%A4%E5%8F%8A%E9%97%AE%E9%A2%98.assets/image-20240905172448875.png)
+
+   由于内容不符合校验,commit错误
+
+   解决方法:  
+
+   ```bash
+   git commit -m "域名版本,完全上线" --no-verify
    ```
 
    
