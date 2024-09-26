@@ -180,7 +180,7 @@ git pull origin master --allow-unrelated-histories
 
 
 
-3. ![image-20240905172448875](git%E5%91%BD%E4%BB%A4%E5%8F%8A%E9%97%AE%E9%A2%98.assets/image-20240905172448875.png)
+3. ![image-20240926174923914](https://hahaha310.oss-cn-qingdao.aliyuncs.com/image-20240926174923914.png)
 
    由于内容不符合校验,commit错误
 
