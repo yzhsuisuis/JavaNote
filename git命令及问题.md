@@ -64,7 +64,8 @@ git commit -m 'first commit'
 4.关联远程仓库
 
 ```bash
-git remote add origin 你的远程库地址
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQC5Xz4EqXhUUnrqP5QUS65ZajwXK8UunctV734HFhGlG4UzslQOiDe4GqVfxp8cJX0WpXSQ4P+HJfFbwsCZUZmXR/3ek1o7EXWo5OdNxEJ88Gq2e6LD4QzmL8EhP8dYmwzGJhILJX2Qb7q6XUtJklQ7IkPY6hBxpz8MdBfdSgmKxZeiqd7aV7uYs5QZD8IS0+T+VLVrjFU1swyy5fOLMGLgyQvG+H1MpSDFcljZ0YQ/gdbOHC4JSOYQPU5MxSRFKEkbreROYI9Y/l3NCWALQWgLakWnZIBVLGZ4hA5gCcdHsq6X4e+a6WnDx18k2FD9woK+BahTGxFdzwYgcMXvxWQ7uiHIIi+8qwKEtCPAM8p+87WLPDDMvyh7GlDx9tmaTIdXwLoNj+860YCQx1VNgVkVa1rmBc2PLnpBzCxEVWr4BS75kfHiDhXcTMapr5/Ndn+3iWzCtid+Zs2KnEn7GGn+BVgfrl6tWK9Ey+VwZ/T34JX+N4uvFALEt/PXK8khxPk= 972849883@qq.comgit remote add origin 你的远程库地址
+git remote add origin 远程url
 ```
 
 5.获取远程仓库与本地合并(如果远程仓库不为空,则必须执行这一步)
@@ -188,6 +189,42 @@ git pull origin master --allow-unrelated-histories
 
    ```bash
    git commit -m "域名版本,完全上线" --no-verify
+   
    ```
 
-   
+   4. fatal: unable to access 'https://github.com/yzhsuisuis/big-market.git/': OpenSSL SSL_read: SSL_ERROR_SYSCALL, errno 0
+
+      或者
+
+      unable to access 'https://github.com/yzhsuisuis/big-market.git/': OpenSSL SSL_connect: SSL_ERROR_SYSCALL in connection to github.com:443
+
+      解决方法:(两个方法都试一下)
+
+      方案一:
+
+      ```bash
+      git config --global http.sslVerifyfalse
+      
+      git config --global --unset http.proxy
+      
+      git config --global --unset https.proxy
+      
+      git config --global http.sslBackend "openssl"
+      
+      ```
+
+      方案二
+
+      ```bash
+      //取消http代理
+      git config --global --unset http.proxy
+      //取消https代理
+      git config --global --unset https.proxy
+      //这里去查自己的代理端口
+      git config --global http.proxy http://127.0.0.1:7890
+      
+      ```
+
+      
+
+      
